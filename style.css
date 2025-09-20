@@ -1,0 +1,128 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  text-align: center;
+  padding: 25px 15px;
+  animation: slideDown 1s ease;
+}
+header h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+header p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+nav button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  background: #ff3c3c;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.6);
+}
+nav button:hover {
+  transform: scale(1.1);
+  background: #ff5e5e;
+  box-shadow: 0 0 20px rgba(255, 60, 60, 1);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 30px;
+  animation: fadeIn 1.5s ease;
+}
+
+.video-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  overflow: hidden;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: floatUp 1s forwards;
+}
+.video-card:nth-child(1) { animation-delay: 0.2s; }
+.video-card:nth-child(2) { animation-delay: 0.4s; }
+.video-card:nth-child(3) { animation-delay: 0.6s; }
+.video-card:nth-child(4) { animation-delay: 0.8s; }
+.video-card:nth-child(5) { animation-delay: 1s; }
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s;
+}
+.video-card:hover video {
+  transform: scale(1.1);
+}
+
+.video-card h3 {
+  margin: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+footer {
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #bbb;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes floatUp {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  transition: transform 0.5s;
+}
+.video-card:hover iframe {
+  transform: scale(1.05);
+}
