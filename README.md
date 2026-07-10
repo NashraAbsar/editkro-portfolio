@@ -28,7 +28,7 @@ The portfolio is organized by specialized editing niches to highlight specific s
 To view this project locally, clone the repository:
 
 ```bash
-git clone https://github.com
+https://github.com/NashraAbsar/editkro-portfolio
 ```
 
 ---
